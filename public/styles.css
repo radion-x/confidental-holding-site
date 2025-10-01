@@ -1,0 +1,257 @@
+:root {
+  --background: #f4f4f4;
+  --text-primary: #1a1a1a;
+  --text-secondary: #3a3a3a;
+  --highlight: #0f1012;
+  --muted: #bbbbbb;
+  --surface: #ffffff;
+  --border: #dedede;
+  --accent: #1f1f1f;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Montserrat", Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  width: min(960px, 92vw);
+  display: grid;
+  gap: clamp(3rem, 5vw, 5rem);
+  padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+}
+
+.hero {
+  text-align: center;
+  display: grid;
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+.hero__logo {
+  margin: 0;
+  font-size: clamp(2.6rem, 4vw, 3.5rem);
+  letter-spacing: 0.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--highlight);
+}
+
+.hero__logo span {
+  display: inline-block;
+}
+
+.hero__logo-light {
+  font-weight: 300;
+}
+
+.hero__logo-bold {
+  font-weight: 600;
+}
+
+.hero__tagline {
+  margin: 0;
+  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+  letter-spacing: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+}
+
+.hero__notice {
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  text-transform: uppercase;
+  line-height: 1.7;
+  letter-spacing: 0.25rem;
+  color: var(--text-secondary);
+}
+
+.hero__address {
+  font-weight: 700;
+  color: var(--highlight);
+}
+
+.contact {
+  background: var(--surface);
+  padding: clamp(2.5rem, 5vw, 3.5rem);
+  border-radius: 12px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  display: grid;
+  gap: 2rem;
+}
+
+.contact__intro {
+  text-align: center;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact__intro h2 {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+  color: var(--highlight);
+}
+
+.contact__intro p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+}
+
+.contact__form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18rem;
+  color: var(--highlight);
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  background-color: var(--surface);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(31, 31, 31, 0.06);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 9rem;
+}
+
+.field__error {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #b91c1c;
+  min-height: 1em;
+}
+
+.contact__submit {
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 2.75rem;
+  background-color: var(--highlight);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact__submit:hover,
+.contact__submit:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.contact__submit[disabled] {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
+.contact__footnote {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.contact__status {
+  margin: 0;
+  font-size: 0.92rem;
+  text-align: center;
+  padding: 0.9rem 1.2rem;
+  border-radius: 8px;
+}
+
+.contact__status--success {
+  background-color: rgba(35, 143, 88, 0.1);
+  color: #23663a;
+}
+
+.contact__status--error {
+  background-color: rgba(185, 28, 28, 0.1);
+  color: #7f1d1d;
+}
+
+@media (min-width: 768px) {
+  .page {
+    gap: 4.5rem;
+  }
+
+  .contact {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .contact__intro {
+    text-align: left;
+  }
+
+  .contact__form {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__logo {
+    letter-spacing: 0.28rem;
+  }
+
+  .hero__title {
+    letter-spacing: 0.28rem;
+  }
+
+  .hero__notice {
+    letter-spacing: 0.18rem;
+  }
+
+  label {
+    letter-spacing: 0.12rem;
+  }
+}

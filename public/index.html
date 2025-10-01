@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Confidental Cosmetic Dentistry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="hero__branding">
+          <p class="hero__logo" aria-label="Confidental Cosmetic Dentistry">
+            <span class="hero__logo-light">CONFI</span><span class="hero__logo-bold">DENTAL</span>
+          </p>
+          <p class="hero__tagline">COSMETIC DENTISTRY</p>
+        </div>
+
+        <h1 class="hero__title">Website currently under construction</h1>
+
+        <div class="hero__notice">
+          <p>We have moved to a new address</p>
+          <p>You can find us at:</p>
+          <p class="hero__address">Shop G02/225 Hume Highway Greenacre NSW 2190</p>
+        </div>
+      </section>
+
+      <section class="contact" aria-labelledby="contact-heading">
+        <div class="contact__intro">
+          <h2 id="contact-heading">Get in touch</h2>
+          <p>
+            Leave your details below and our team will reach out to confirm your
+            next appointment.
+          </p>
+        </div>
+        <form class="contact__form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
+            <p class="field__error" data-error-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+            <p class="field__error" data-error-for="email"></p>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              pattern="\+?[0-9\s\(\)\-]{6,}"
+            />
+            <p class="field__error" data-error-for="phone"></p>
+          </div>
+          <div class="field">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <p class="field__error" data-error-for="message"></p>
+          </div>
+          <button type="submit" class="contact__submit">Send message</button>
+          <p class="contact__footnote">
+            We typically respond within one business day. For urgent enquiries
+            please call us directly.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <template id="form-success">
+      <p class="contact__status contact__status--success">
+        Thank you! Your message was sent successfully.
+      </p>
+    </template>
+
+    <template id="form-error">
+      <p class="contact__status contact__status--error">
+        Something went wrong while sending your message. Please try again later
+        or contact us directly.
+      </p>
+    </template>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
